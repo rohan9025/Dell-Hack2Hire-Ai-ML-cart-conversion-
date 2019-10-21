@@ -26,6 +26,12 @@ body{
 	margin: auto;
 }
 
+.head-title{
+	text-align: center;
+	font-family: 'Advent Pro', sans-serif;
+	font-size: 5em;
+}
+
 .image-box{
 	display: grid;
 	height: 100%;

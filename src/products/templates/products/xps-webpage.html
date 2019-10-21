@@ -17,6 +17,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 	<!-- Custom Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Advent+Pro:700&display=swap" rel="stylesheet"> 
 
 	<!-- Custom CSS & JS -->
 	<link rel="stylesheet" href={%static 'products/assets/css/styles.css'%}>
@@ -75,7 +76,11 @@
 			</div>
 		</div>
 	</nav>
-	
+
+	<div class="container" style="margin-top: 80px;">
+		<i><h1 class="head-title">XPS</h1></i>
+	</div>
+
 	<div class="container-fluid promo-image-fluid" style="margin-top: 80px; padding: 0;">
 		<div id="scrollable-price">
 			<div class="image-box">
@@ -110,10 +115,10 @@
 
 	<div>
 		<h3 style="text-align: center; margin-top: 2em;">
-            <form action="">
-            {% csrf_token %}
-            <input type="submit">
-            </form>
+			<form action="">
+			{% csrf_token %}
+				<input type="submit">
+			</form>
 		</h3>
 	</div>
 
@@ -171,18 +176,18 @@
 		var docViewBottom;
 
 		var currentState = {
-			PromoImage : false,
+			Price : false,
 			Cpu : false,
 			Memory : false,
 			Screen : false
 		}
 
 		var stats = {
-			PromoImage : [],
+			Price : [],
 			Cpu : [],
 			Memory : [],
 			Screen : [],
-            'csrfmiddlewaretoken':"{{csrf_token}}"
+			'csrfmiddlewaretoken':"{{csrf_token}}"
 		}
 
 		window.onscroll = function() { isScrolledIntoView() }
@@ -201,14 +206,14 @@
 			
 			var dateObj = new Date();
 
-			retVal_PromoImage = inView("scrollable-price");
+			retVal_Price = inView("scrollable-price");
 			retVal_Cpu = inView("scrollable-cpu");
 			retVal_Memory = inView("scrollable-memory");
 			retVal_Screen = inView("scrollable-screen");
 
-			if (!(currentState.PromoImage == retVal_PromoImage)){
-				currentState.PromoImage = retVal_PromoImage;
-				stats.PromoImage.push(dateObj.getTime());
+			if (!(currentState.Price == retVal_Price)){
+				currentState.Price = retVal_Price;
+				stats.Price.push(dateObj.getTime());
 				// console.log(stats);
 			}
 			if (!(currentState.Cpu == retVal_Cpu)){
@@ -228,18 +233,35 @@
 			}
 		}
 
-		$(document).ready(function(){
-            $("form").submit(function (event){
-                event.preventDefault();
-                $.ajax({
-                    type: "POST",
-                    url: "/xps-webpage/",
-                    data: stats,
+		function cleanStats(){
+			var dateObj = new Date();
 
-                });
-                return false;
-            })
-        })
+			if (stats.Cpu.length % 2 == 1){
+				stats.Cpu.push(dateObj.getTime());
+			}
+			if (stats.Memory.length % 2 == 1){
+				stats.Memory.push(dateObj.getTime());
+			}
+			if (stats.Price.length % 2 == 1){
+				stats.Price.push(dateObj.getTime());
+			}
+			if (stats.Screen.length % 2 == 1){
+				stats.Screen.push(dateObj.getTime());
+			}
+		}
+
+		$(document).ready(function(){
+			$("form").submit(function (event){
+				cleanStats();
+				event.preventDefault();
+				$.ajax({
+					type: "POST",
+					url: "/xps-webpage/",
+					data: stats,
+				});
+			return false;
+			})
+		})
 	</script>
 
 </body>
