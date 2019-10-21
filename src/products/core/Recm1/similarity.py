@@ -9,8 +9,8 @@
 from pandas import read_csv
 
 class similarity:
-    def __init__(self):
-        self.dataset = read_csv('laptops-noval.csv')
+    def __init__(self, path_to_dataset):
+        self.dataset = read_csv(path_to_dataset)
         self.dataset = self.dataset.values.tolist()
 
     def check_similarity(self, test_art : dict, num_close : int = None):
@@ -121,7 +121,7 @@ class similarity:
         for ind in res:
             final_list.append(self.dataset[ind])
 
-        return (final_list)
+        return final_list
 
 if __name__ == '__main__':
     
