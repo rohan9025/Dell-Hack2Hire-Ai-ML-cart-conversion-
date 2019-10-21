@@ -17,6 +17,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 	<!-- Custom Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Advent+Pro:700&display=swap" rel="stylesheet"> 
 
 	<!-- Custom CSS & JS -->
 	<link rel="stylesheet" href={%static 'products/assets/css/styles.css'%}>
@@ -75,7 +76,11 @@
 			</div>
 		</div>
 	</nav>
-	
+
+	<div class="container" style="margin-top: 80px;">
+		<i><h1 class="head-title">Inspiron</h1></i>
+	</div>
+
 	<div class="container-fluid promo-image-fluid" style="margin-top: 80px; padding: 0;">
 		<div id="scrollable-price">
 			<div class="image-box">
@@ -87,7 +92,15 @@
 	<div class="container-fluid promo-image-fluid">
 		<div id="scrollable-cpu">
 			<div class="image-box">
-				<img src={%static 'products/assets/img/Inspiron/CPU.png'%}  alt="Intel Inside" class="promo-image">
+				<img src={%static 'products/assets/img/Inspiron/Cpu.png'%}  alt="Intel Inside" class="promo-image">
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid promo-image-fluid">
+		<div id="scrollable-memory">
+			<div class="image-box">
+				<img src={%static 'products/assets/img/Inspiron/GPU.png'%} alt="Super Powerful Graphics" class="promo-image">
 			</div>
 		</div>
 	</div>
@@ -174,7 +187,8 @@
 			PromoImage : false,
 			Cpu : false,
 			Memory : false,
-			Screen : false
+			Screen : false,
+			Gpu : false
 		}
 
 		var stats = {
@@ -182,7 +196,8 @@
 			Cpu : [],
 			Memory : [],
 			Screen : [],
-            'csrfmiddlewaretoken':"{{csrf_token}}"
+			Gpu : false
+			'csrfmiddlewaretoken':"{{csrf_token}}"
 		}
 
 		window.onscroll = function() { isScrolledIntoView() }
@@ -226,20 +241,44 @@
 				stats.Screen.push(dateObj.getTime());
 				// console.log(stats);
 			}
+			if (!(currentState.Gpu == retVal_Gpu)){
+				currentState.Gpu = retVal_Gpu;
+				stats.Gpu.push(dateObj.getTime());
+				// console.log(stats);
+			}
+		}
+
+		function cleanStats(){
+			var dateObj = new Date();
+
+			if (stats.Cpu.length % 2 == 1){
+				stats.Cpu.push(dateObj.getTime());
+			}
+			if (stats.Memory.length % 2 == 1){
+				stats.Memory.push(dateObj.getTime());
+			}
+			if (stats.Price.length % 2 == 1){
+				stats.Price.push(dateObj.getTime());
+			}
+			if (stats.Screen.length % 2 == 1){
+				stats.Screen.push(dateObj.getTime());
+			}
+			if (stats.Gpu.length % 2 == 1){
+				stats.Gpu.push(dateObj.getTime());
+			}
 		}
 
 		$(document).ready(function(){
-            $("form").submit(function (event){
-                event.preventDefault();
-                $.ajax({
-                    type: "POST",
-                    url: "/xps-webpage/",
-                    data: stats,
-
-                });
-                return false;
-            })
-        })
+			$("form").submit(function (event){
+				event.preventDefault();
+				$.ajax({
+				type: "POST",
+				url: "/inspiron-webpage/",
+				data: stats,
+				});
+			return false;
+			})
+		})
 	</script>
 
 </body>
