@@ -2,27 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from products.core.jsparser.parser import parser
 from products.core.jsparser.parser import calcPercentage
+from products.core.CartConv.CartAbandon import CartAbandon
+from products.core.Recm2.SeeBoughtRecommender import SeeBoughtRecommender as SBR
+from products.core.Recm1.similarity import similarity
 
 # Create your views here.
-
-posts=[
-    {
-        'model':'inspiron',
-        'device':'laptop',
-        'type':'college',
-    },
-    {
-        'model':'legion',
-        'device':'laptop',
-        'type':'gaming',
-    },
-    {
-        'model':'alienware',
-        'device':'laptop',
-        'type':'gaming',
-    }
-
-]
 def index(request):
     
     return render(request,'products/index.html')
@@ -31,6 +15,16 @@ def about(request):
         'title':"about"
     }
     return render(request,'products/about.html',context)
+
+def bg(data):
+    ca = CartAbandon("products/core/CartConv/final_model.sav")
+    print("Checkout:\t", ca.get_percentage(data)['Checkout'])
+    print("Abandon:\t", ca.get_percentage(data)['Abandon'])
+
+    sim = similarity("products/core/Recm1/laptops-noval.csv")
+    sim_rec = sim.check_similarity(data)
+    for ls in sim_rec:
+        print ("REC1-Laptop:\t", ls[6])
 
 def xps(request):
     # This handles the AJAX POST from xps-webpage.html
@@ -67,9 +61,10 @@ def xps(request):
     parsedData['gpu'] = 0
 
     calcP_Obj = calcPercentage(parsedData)
-    print (calcP_Obj.calculate_percentage())
+    percentages = calcP_Obj.calculate_percentage()
 
     # TODO: send to calcP_Obj.calculate_percentage() to core...
+    bg(percentages)
 
     return render(request,'products/xps-webpage.html')
 
