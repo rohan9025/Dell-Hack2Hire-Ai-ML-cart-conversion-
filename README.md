@@ -32,5 +32,5 @@ An overview of
 
 * Sudheendra Raghav - raghav170555@mechyd.ac.in
 * Mohammed Abdul Khaliq - khaliq170568@mechyd.ac.in
-* Rohan Russel Nedungadi - rohan170544@mechyd.ac.in
+* Rohan Russel Nedungadi - rohanrussel170544@mechyd.ac.in
 * Rochan Avlur Venkat - rochan170543@mechyd.ac.in
