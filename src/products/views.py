@@ -221,6 +221,132 @@ def alienware15_series(request):
 def alienware17_series(request):
     return render(request,'products/alienware17-series.html')
 
+def cart(request):
+    print(request.build_absolute_uri())
+    posts=[
+    {
+        'upid' : 2,
+        'model' : 'Dell Inspiron 15 5590 v2',
+        'device' : 'laptop',
+        'price' : 'Rs. 49,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+    {
+        'upid' : 3,
+        'model' : 'Dell Inpiron 15 5590 v3',
+        'device' : 'laptop',
+        'price' : 'Rs. 52,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 4,
+        'model' : 'Dell Inspiron 15 5590 v1',
+        'device' : 'laptop',
+        'price' : 'Rs. 39,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 5,
+        'model' : 'Dell Inspiron 15 7591',
+        'device' : 'laptop',
+        'price' : 'Rs. 63,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 6,
+        'model' : 'Dell XPS 13',
+        'device' : 'laptop',
+        'price' : 'Rs. 67,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 7,
+        'model' : 'Dell XPS 13 v2',
+        'device' : 'laptop',
+        'price' : 'Rs. 77,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 8,
+        'model' : 'Dell XPS 15 v1',
+        'device' : 'laptop',
+        'price' : 'Rs. 75,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 9,
+        'model' : 'Dell XPS 15 v2',
+        'device' : 'laptop',
+        'price' : 'Rs. 1,24,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 10,
+        'model' : 'Dell Alienware 15 v1',
+        'device' : 'laptop',
+        'price' : 'Rs. 1,28,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 11,
+        'model' : 'Dell Alienware 15 v2',
+        'device' : 'laptop',
+        'price' : 'Rs. 1,30,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 12,
+        'model' : 'Dell Alienware 17 v1',
+        'device' : 'laptop',
+        'price' : 'Rs. 1,22,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 13,
+        'model' : 'Dell Alienware 17 v2',
+        'device' : 'laptop',
+        'price' : 'Rs. 1,24,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 14,
+        'model' : 'Dell Latitude 14 v2',
+        'device' : 'laptop',
+        'price' : 'Rs. 45,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 15,
+        'model' : 'Dell Latitude 14 v3',
+        'device' : 'laptop',
+        'price' : 'Rs. 50,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 16,
+        'model' : 'Dell Latitude 14 v1',
+        'device' : 'laptop',
+        'price' : 'Rs. 44,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+     {
+        'upid' : 17,
+        'model' : 'Dell Inspiron 17',
+        'device' : 'laptop',
+        'price' : 'Rs. 55,000.00',
+        'imagePath' : 'products/assets/img/inspiron5390.jpg'
+    },
+
+    
+
+]
+    context ={
+        "posts":posts,
+       "upid":"1"
+        }
+    
+    return render(request,'products/cart.html',context)
+
 
 
 
