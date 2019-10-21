@@ -14,3 +14,8 @@
 > run `python3 -m http.server 3010`. And then go to `localhost:3010/`.
 
 * Create .gitignore
+
+## v0.0.2
+
+* Restructured Repo to accept Django file structure
+* Added 
