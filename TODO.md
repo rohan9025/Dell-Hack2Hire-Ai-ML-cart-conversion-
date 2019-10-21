@@ -10,6 +10,7 @@
 * [x] Payment Gateway design  
 * [x] make `products-laptop.html`
 * [ ] integrate django
+* [ ] add tooltip to flames
 
 ## Rochan
 
