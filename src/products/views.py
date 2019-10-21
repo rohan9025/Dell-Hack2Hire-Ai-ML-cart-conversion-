@@ -32,3 +32,24 @@ def about(request):
         'title':"about"
     }
     return render(request,'products/about.html',context)
+
+def xps(request):
+    # This handles the AJAX POST from xps-webpage.html
+
+    data = dict(request.POST)
+
+    try:
+        """
+            This is for the first pass. For some reason, when the page loads
+            it goes through this function. data['Screen[]'] isn't defined as
+            data is empty.
+        """
+        screen = data['Screen[]']
+    except:
+        """
+            If this is the first pass, then exit the function
+        """
+        return render(request,'products/xps-webpage.html')
+    
+
+    return render(request,'products/xps-webpage.html')
