@@ -23,12 +23,9 @@ posts=[
     }
 
 ]
-def home(request):
-    context ={
-        'posts':posts,
-        'title':"home"
-    }
-    return render(request,'products/home.html',context)
+def index(request):
+    
+    return render(request,'products/index.html')
 def about(request):
     context ={
         'title':"about"
@@ -202,4 +199,30 @@ def alienware(request):
     # TODO: send to calcP_Obj.calculate_percentage() to core...
 
     return render(request,'products/alienware-webpage.html')
+
+def xps13_series(request):
+    return render(request,'products/xps13-series.html')
+
+def xps15_series(request):
+    return render(request,'products/xps15-series.html')
+
+def inspiron15_series(request):
+    return render(request,'products/inspiron15-series.html')
+
+def inspiron17_series(request):
+    return render(request,'products/inspiron17-series.html')
+
+def latitude_series(request):
+    return render(request,'products/latitude-series.html')
+
+def alienware15_series(request):
+    return render(request,'products/alienware15-series.html')
+
+def alienware17_series(request):
+    return render(request,'products/alienware17-series.html')
+
+
+
+
+
 
