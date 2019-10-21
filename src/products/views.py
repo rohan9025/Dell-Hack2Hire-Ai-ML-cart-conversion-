@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from products.core.jsparser.parser import parser
+from products.core.jsparser.parser import calcPercentage
 
 # Create your views here.
 
@@ -45,18 +47,37 @@ def xps(request):
             data is empty.
         """
         screen = data['Screen[]']
-        print(screen+"\n")
     except:
         """
             If this is the first pass, then exit the function
         """
         return render(request,'products/xps-webpage.html')
-    
+
+    parsedData = {}
+
+    parser_screen = parser(data['Screen[]'])
+    parsedData['screen'] = parser_screen.parse()
+
+    parser_price = parser(data['Price[]'])
+    parsedData['price'] = parser_price.parse()
+
+    parser_memory = parser(data['Memory[]'])
+    parsedData['memory'] = parser_memory.parse()
+
+    parser_cpu = parser(data['Cpu[]'])
+    parsedData['cpu'] = parser_cpu.parse()
+
+    parsedData['gpu'] = 0
+
+    calcP_Obj = calcPercentage(parsedData)
+    print (calcP_Obj.calculate_percentage())
+
+    # TODO: send to calcP_Obj.calculate_percentage() to core...
 
     return render(request,'products/xps-webpage.html')
 
 def latitude(request):
-    # This handles the AJAX POST from xps-webpage.html
+    # This handles the AJAX POST from latitude-webpage.html
 
     data = dict(request.POST)
 
@@ -67,14 +88,32 @@ def latitude(request):
             data is empty.
         """
         screen = data['Screen[]']
-        print(screen+"\n")
-
     except:
         """
             If this is the first pass, then exit the function
         """
         return render(request,'products/latitude-webpage.html')
-    
+
+    parsedData = {}
+
+    parser_screen = parser(data['Screen[]'])
+    parsedData['screen'] = parser_screen.parse()
+
+    parser_price = parser(data['Price[]'])
+    parsedData['price'] = parser_price.parse()
+
+    parser_memory = parser(data['Memory[]'])
+    parsedData['memory'] = parser_memory.parse()
+
+    parser_cpu = parser(data['Cpu[]'])
+    parsedData['cpu'] = parser_cpu.parse()
+
+    parsedData['gpu'] = 0
+
+    calcP_Obj = calcPercentage(parsedData)
+    print (calcP_Obj.calculate_percentage())
+
+    # TODO: send to calcP_Obj.calculate_percentage() to core...
 
     return render(request,'products/latitude-webpage.html')
 
@@ -91,14 +130,33 @@ def inspiron(request):
             data is empty.
         """
         screen = data['Screen[]']
-        print(screen+"\n")
-
     except:
         """
             If this is the first pass, then exit the function
         """
         return render(request,'products/inspiron-webpage.html')
-    
+
+    parsedData = {}
+
+    parser_screen = parser(data['Screen[]'])
+    parsedData['screen'] = parser_screen.parse()
+
+    parser_price = parser(data['Price[]'])
+    parsedData['price'] = parser_price.parse()
+
+    parser_memory = parser(data['Memory[]'])
+    parsedData['memory'] = parser_memory.parse()
+
+    parser_cpu = parser(data['Cpu[]'])
+    parsedData['cpu'] = parser_cpu.parse()
+
+    parsed_GPU = parser(data['Gpu[]'])
+    parsedData['gpu'] = parser_GPU.parse()
+
+    calcP_Obj = calcPercentage(parsedData)
+    print (calcP_Obj.calculate_percentage())
+
+    # TODO: send to calcP_Obj.calculate_percentage() to core...
 
     return render(request,'products/inspiron-webpage.html')
 
@@ -115,14 +173,33 @@ def alienware(request):
             data is empty.
         """
         screen = data['Screen[]']
-        print(screen+"\n")
-
     except:
         """
             If this is the first pass, then exit the function
         """
         return render(request,'products/alienware-webpage.html')
-    
+
+    parsedData = {}
+
+    parser_screen = parser(data['Screen[]'])
+    parsedData['screen'] = parser_screen.parse()
+
+    parser_price = parser(data['Price[]'])
+    parsedData['price'] = parser_price.parse()
+
+    parser_memory = parser(data['Memory[]'])
+    parsedData['memory'] = parser_memory.parse()
+
+    parser_cpu = parser(data['Cpu[]'])
+    parsedData['cpu'] = parser_cpu.parse()
+
+    parsed_GPU = parser(data['Gpu[]'])
+    parsedData['gpu'] = parser_GPU.parse()
+
+    calcP_Obj = calcPercentage(parsedData)
+    print (calcP_Obj.calculate_percentage())
+
+    # TODO: send to calcP_Obj.calculate_percentage() to core...
 
     return render(request,'products/alienware-webpage.html')
 
