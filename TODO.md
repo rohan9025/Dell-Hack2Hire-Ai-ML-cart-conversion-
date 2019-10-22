@@ -3,8 +3,8 @@
 * [x] extract navbar template, make into modules
 * [x] JavaScript listener
 * [x] Get AJAX-POST thingie integrated with Django
-* [ ] Dynamic Page
-* [ ] add tooltip to flames
+* [x] Dynamic Page
+* [x] add tooltip to flames
 * [ ] Test all pages
 
 ## rohan9025
@@ -12,15 +12,15 @@
 * [x] Backend python framework
 * [x] Payment Gateway design  
 * [x] make `products-laptop.html`
-* [ ] integrate django
+* [x] integrate django
 
 ## Rochan
 
 * [x] Page SVM model
 * [x] Recommender model customer-saw-this-bought-that
 * [x] Make the fuctions to inference the models 
-* [ ] Make the datasets for both models
-* [ ] Presentation
+* [x] Make the datasets for both models
+* [x] Presentation
 
 ## MAK
 
@@ -29,4 +29,4 @@
 * <strike>[ ] Get tweets from the internet</strike>
 * [x] Improve the dataset
 * [x] Functions to interact with model
-* [ ] Proof
+* [x] Proof
