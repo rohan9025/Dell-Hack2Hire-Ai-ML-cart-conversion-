@@ -10,22 +10,39 @@ The participants are required to clone this repository and create a private Gitl
 ----------------------------------
 
 A brief description of 
-* What problem did the team try to solve
-* What is the proposed solution
+* Figure out the abandonment probabilty and implement solutions to reduce the abandonment.
+* One Complete Reinforcement Learned Model that understands when to use which part of the solution
 
 ### Solution Description
 ----------------------------------
 
+* Solutions :
+    * Digital Body Language : Time spent on each section of the webpage, helps in determing abandonment rate.
+    * Digital Footprint : User browsing patterns across multiple product pages.
+    * Same Spec, Similar Price : Recommends similar spec and priced items to whats in the cart.
+    * Social Valuation : Social Media and Tweets to motivate customer.
+    * UI Uplifts : to make the buying process easier and reach the cart in fewer steps.
+
+
+* Machine Learning Solution :
+    * One Reinforcement Learning Model :
+        * Determines the abandonment rate.
+        * Uses the dataset to figure out which solution to implement based on user's digital body language.
+
+
 #### Architecture Diagram
 
-Affix an image of the flow diagram/architecture diagram of the solution
+Flow Diagram
+![Flow Diagram](Documentation/Flow_main.png)
 
 #### Technical Description
 
 An overview of 
-* What technologies/versions were used
-* Setup/Installations required to run the solution
-* Instructions to run the submitted code
+* Javascript, Django, Jquery, Python, ScikitLearn, Pandas.
+* Steps:
+    * `pip install -r requirements.txt`
+    * `cd Application Code`
+    * `python3 manage.py runserver`
 
 ### Team Members
 ----------------------------------
