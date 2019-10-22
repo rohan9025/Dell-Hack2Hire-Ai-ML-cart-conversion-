@@ -1,3 +1,4 @@
 # All tests/testing folders & files
 Testing/
 .vscode/
+*/__pycache__/*
