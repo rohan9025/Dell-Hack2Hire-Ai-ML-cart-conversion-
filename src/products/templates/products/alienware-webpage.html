@@ -106,7 +106,7 @@
 	</div>
 
 	<div class="container-fluid promo-image-fluid">
-		<div id="scrollable-memory">
+		<div id="scrollable-gpu">
 			<div class="image-box">
 				<img src={%static 'products/assets/img/Alienware/GPU.png'%} alt="Super Powerful Graphics" class="promo-image">
 			</div>
@@ -123,9 +123,15 @@
 	</div>
 
 	<div>
-		<h3 style="text-align: center; margin-top: 2em;">
-            {% csrf_token %}
-			<a href="../alienware15-series" class="btn btn-primary" id="btn-sub" role="button"></a>
+		<!-- <h3 style="text-align: center; margin-top: 2em;" id="btn-sub-h3">
+			<form action="">
+				{% csrf_token %}
+				<input type="submit">
+			</form>
+
+		</h3> -->
+		<h3 style="text-align: center;" class="head-title">
+			<a href="../alienware15-series" onclick="tele()" id="btn-sub-1">Proceed</a>
 		</h3>
 	</div>
 
@@ -183,7 +189,7 @@
 		var docViewBottom;
 
 		var currentState = {
-			PromoImage : false,
+			Price : false,
 			Cpu : false,
 			Memory : false,
 			Screen : false,
@@ -191,7 +197,7 @@
 		}
 
 		var stats = {
-			PromoImage : [],
+			Price : [],
 			Cpu : [],
 			Memory : [],
 			Screen : [],
@@ -215,14 +221,15 @@
 			
 			var dateObj = new Date();
 
-			retVal_PromoImage = inView("scrollable-price");
+			retVal_Price = inView("scrollable-price");
 			retVal_Cpu = inView("scrollable-cpu");
 			retVal_Memory = inView("scrollable-memory");
 			retVal_Screen = inView("scrollable-screen");
+			retVal_Gpu = inView("scrollable-gpu")
 
-			if (!(currentState.PromoImage == retVal_PromoImage)){
-				currentState.PromoImage = retVal_PromoImage;
-				stats.PromoImage.push(dateObj.getTime());
+			if (!(currentState.Price == retVal_Price)){
+				currentState.Price = retVal_Price;
+				stats.Price.push(dateObj.getTime());
 				// console.log(stats);
 			}
 			if (!(currentState.Cpu == retVal_Cpu)){
@@ -267,8 +274,12 @@
 			}
 		}
 
+		function tele(){
+			window.location.href = '../alienware15-series';
+		}
+
 		$(document).ready(function(){
-			$("#btn-sub").click(function (event){
+			$("#btn-sub-1").click( function (event){
 				cleanStats();
 				event.preventDefault();
 				$.ajax({
@@ -276,6 +287,8 @@
 				url: "/alienware-webpage/",
 				data: stats,
 				});
+
+			console.log("TEMPOPPPP");
 			return false;
 			})
 		})

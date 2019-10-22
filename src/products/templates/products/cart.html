@@ -51,12 +51,12 @@
         <div class="container" style="height: 100px;">
             <div class="row justify-content-center" style="height: 100px;">
                 {% for post in posts%}
-                {% if post.upid == 2 %}
+                {% if post.upid == upid %}
                 
-                <div class="col-xl-2 text-center"><img src={%static '{{post.imagePath}}'%}></div>
+                <!-- <div class="col-xl-2 text-center"><img src={%static '{{post.imagePath}}'%}></div> -->
                 <div class="col-xl-3" style="font-size: 16px;font-weight: bold;">
                     <p style="font-size: 16px;font-weight: bold;margin-top: 20px;">{{post.model}}<br></p>
-                    <p style="font-size: 15px;font-weight: normal;margin-top:;">{{post.price}}<br></p>
+                    <p style="font-size: 15px;font-weight: normal;">{{post.price}}<br></p>
                 </div>
                 <div class="col-xl-2"><a href="../payment-user"><button class="btn btn-primary" type="button" style="margin-top: 33px;">Checkout</button></a></div>
                 {% endif %}
@@ -66,6 +66,8 @@
         </div>
     </div>
     <section style="margin: 0px;margin-top: 0px;margin-right: 100px;margin-left: 100px;margin-bottom: 0px;height: 100%;">
+        
+        {% if post.tweets_before == 1 %}
         <div class="row" style="height: 220px;">
             <div class="col" style="margin-top: 30px;">
                 <p class="text-center" style="font-size: 35px;font-weight: bold;line-height: 70px;">You are almost there.<br>Just one more step to join the Dell family.</p>
@@ -103,6 +105,7 @@
                         </div>
                     </div>
         </div>
+        {% endif %}
         <div class="row">
             <div class="col">
                 <p class="text-center" style="font-size: 35px;font-weight: bold;line-height: 70px;margin-top: 74px;">All the essentials. And then some.</p>

@@ -6,6 +6,8 @@ from products.core.CartConv.CartAbandon import CartAbandon
 from products.core.Recm2.SeeBoughtRecommender import SeeBoughtRecommender as SBR
 from products.core.Recm1.similarity import similarity
 
+tempFile = "tempFile"
+
 # Create your views here.
 def index(request):
     
@@ -16,6 +18,10 @@ def about(request):
     }
     return render(request,'products/about.html',context)
 
+def abandon(data):
+    ca = CartAbandon("products/core/CartConv/final_model.sav")
+    print("Abandon:\t", ca.get_percentage(data)['Abandon'])
+
 def bg(data):
     ca = CartAbandon("products/core/CartConv/final_model.sav")
     print("Checkout:\t", ca.get_percentage(data)['Checkout'])
@@ -25,6 +31,8 @@ def bg(data):
     sim_rec = sim.check_similarity(data)
     for ls in sim_rec:
         print ("REC1-Laptop:\t", ls[6])
+
+    return ca.get_percentage(data)['Abandon']
 
 def xps(request):
     # This handles the AJAX POST from xps-webpage.html
@@ -65,6 +73,7 @@ def xps(request):
 
     # TODO: send to calcP_Obj.calculate_percentage() to core...
     bg(percentages)
+    tempData = parsedData
 
     return render(request,'products/xps-webpage.html')
 
@@ -106,6 +115,8 @@ def latitude(request):
     print (calcP_Obj.calculate_percentage())
 
     # TODO: send to calcP_Obj.calculate_percentage() to core...
+    bg(parsedData)
+    tempData = parsedData
 
     return render(request,'products/latitude-webpage.html')
 
@@ -145,10 +156,14 @@ def inspiron(request):
     parsed_GPU = parser(data['Gpu[]'])
     parsedData['gpu'] = parser_GPU.parse()
 
+    print (parsedData)
+
     calcP_Obj = calcPercentage(parsedData)
     print (calcP_Obj.calculate_percentage())
 
     # TODO: send to calcP_Obj.calculate_percentage() to core...
+    bg(parsedData)
+    tempData = parsedData
 
     return render(request,'products/inspiron-webpage.html')
 
@@ -185,13 +200,17 @@ def alienware(request):
     parser_cpu = parser(data['Cpu[]'])
     parsedData['cpu'] = parser_cpu.parse()
 
-    parsed_GPU = parser(data['Gpu[]'])
+    parser_GPU = parser(data['Gpu[]'])
     parsedData['gpu'] = parser_GPU.parse()
 
     calcP_Obj = calcPercentage(parsedData)
-    print (calcP_Obj.calculate_percentage())
+    percentages = calcP_Obj.calculate_percentage()
 
     # TODO: send to calcP_Obj.calculate_percentage() to core...
+    tempData = bg(percentages)
+
+    with open(tempFile, 'w') as Fobj:
+        Fobj.write(str(float(tempData)))
 
     return render(request,'products/alienware-webpage.html')
 
@@ -228,7 +247,9 @@ def payment3(request):
 
 
 def cart(request):
-    print(request.build_absolute_uri())
+    uri = request.build_absolute_uri()
+    upid = int(uri[uri.find("?=")+2:])
+
     posts=[
     {
         'upid' : 2,
@@ -342,13 +363,25 @@ def cart(request):
         'price' : 'Rs. 55,000.00',
         'imagePath' : 'products/assets/img/inspiron5390.jpg'
     },
+    ]
 
-    
+    from ast import literal_eval as le
 
-]
+    with open(tempFile, 'r') as Fobj:
+        data_raw = Fobj.read()
+        data = le(data_raw)
+
+    abandonRate = data
+
+    print (abandonRate)
+
+    if (abandonRate < 0.30):
+        tweets_before = 1
+
     context ={
         "posts":posts,
-       "upid":"1"
+        "upid": upid,
+        "tweets_before" : 1
         }
     
     return render(request,'products/cart.html',context)
