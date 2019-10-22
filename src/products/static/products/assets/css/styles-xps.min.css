@@ -1,0 +1,653 @@
+.animation-element.slide-left,.animation-element.slide-right {
+    opacity:0;
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear
+}
+
+.product-list {
+    overflow:hidden;
+    -webkit-perspective:1000px;
+    -moz-perspective:1000px;
+    -ms-perspective:1000px;
+    perspective:1000px;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+    transform-style:preserve-3d
+}
+
+.animation-element {
+    opacity:0;
+    position:relative;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+    transform-style:preserve-3d
+}
+
+.animation-element.slide-left {
+    transition:all .5s linear;
+    -moz-transform:translate3d(-100px,0,0);
+    -webkit-transform:translate3d(-100px,0,0);
+    -o-transform:translate(-100px,0);
+    -ms-transform:translate(-100px,0);
+    transform:translate3d(-100px,0,0)
+}
+
+.animation-element.slide-right {
+    transition:all .5s linear;
+    -moz-transform:translate3d(100px,0,0);
+    -webkit-transform:translate3d(100px,0,0);
+    -o-transform:translate(100px,0);
+    -ms-transform:translate(100px,0);
+    transform:translate3d(100px,0,0)
+}
+
+.animation-element.slide-top,.animation-element.slide-top-left {
+    opacity:0;
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear
+}
+
+.animation-element.slide-top {
+    transition:all .5s linear;
+    -moz-transform:translate3d(0,-100px,0);
+    -webkit-transform:translate3d(0,-100px,0);
+    -o-transform:translate(0,-100px);
+    -ms-transform:translate(0,-100px);
+    transform:translate3d(0,-100px,0)
+}
+
+.animation-element.slide-top-left {
+    transition:all .5s linear;
+    -moz-transform:translate3d(-100px,-100px,0);
+    -webkit-transform:translate3d(-100px,-100px,0);
+    -o-transform:translate(-100px,-100px);
+    -ms-transform:translate(-100px,-100px);
+    transform:translate3d(-100px,-100px,0)
+}
+
+.animation-element.slide-bottom,.animation-element.slide-top-right {
+    opacity:0;
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear
+}
+
+.animation-element.slide-top-right {
+    transition:all .5s linear;
+    -moz-transform:translate3d(100px,-100px,0);
+    -webkit-transform:translate3d(100px,-100px,0);
+    -o-transform:translate(100px,-100px);
+    -ms-transform:translate(100px,-100px);
+    transform:translate3d(100px,-100px,0)
+}
+
+.animation-element.slide-bottom {
+    transition:all .5s linear;
+    -moz-transform:translate3d(0,100px,0);
+    -webkit-transform:translate3d(0,100px,0);
+    -o-transform:translate(0,100px);
+    -ms-transform:translate(0,100px);
+    transform:translate3d(0,100px,0)
+}
+
+.animation-element.slide-bottom-left,.animation-element.slide-bottom-right {
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear;
+    opacity:0
+}
+
+.animation-element.slide-bottom-left {
+    transition:all .5s linear;
+    -moz-transform:translate3d(-100px,100px,0);
+    -webkit-transform:translate3d(-100px,100px,0);
+    -o-transform:translate(-100px,100px);
+    -ms-transform:translate(-100px,100px);
+    transform:translate3d(-100px,100px,0)
+}
+
+.animation-element.slide-bottom-right {
+    transition:all .5s linear;
+    -moz-transform:translate3d(100px,100px,0);
+    -webkit-transform:translate3d(100px,100px,0);
+    -o-transform:translate(100px,100px);
+    -ms-transform:translate(100px,100px);
+    transform:translate3d(100px,100px,0)
+}
+
+.animation-element.slide-rotate-clockwise {
+    opacity:0;
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear;
+    transition:all .5s linear;
+    -moz-transform:rotate(0);
+    -webkit-transform:rotate(0);
+    -o-transform:rotate(0);
+    -ms-transform:rotate(0);
+    transform:rotate(0)
+}
+
+.animation-element.slide-left-rotate-clockwise {
+    opacity:0;
+    -moz-transition:all 1s linear;
+    -webkit-transition:all 1s linear;
+    -o-transition:all 1s linear;
+    transition:all 1s linear;
+    -moz-transform:translate3d(-300px,0,0) rotate(0);
+    -webkit-transform:translate3d(-300px,0,0) rotate(0);
+    -o-transform:translate(-300px,0) rotate(0);
+    -ms-transform:translate(-300px,0) rotate(0);
+    transform:translate3d(-300px,0,0) rotate(0)
+}
+
+.animation-element.slide-rotate-counterclockwise {
+    opacity:0;
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear;
+    transition:all .5s linear;
+    -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg)
+}
+
+.animation-element.slide-right-rotate-counterclockwise {
+    opacity:0;
+    -moz-transition:all 1s linear;
+    -webkit-transition:all 1s linear;
+    -o-transition:all 1s linear;
+    transition:all 1s linear;
+    -moz-transform:translate3d(300px,0,0) rotate(360deg);
+    -webkit-transform:translate3d(300px,0,0) rotate(360deg);
+    -o-transform:translate(300px,0) rotate(360deg);
+    -ms-transform:translate(300px,0) rotate(360deg);
+    transform:translate3d(300px,0,0) rotate(360deg)
+}
+
+.animation-element.slide-rotate-clockwise-180,.animation-element.slide-rotate-counterclockwise-180 {
+    opacity:0;
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear;
+    transition:all .5s linear;
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    transform:rotate(180deg)
+}
+
+.animation-element.slide-fade,.animation-element.slide-left-flip-x-y {
+    -moz-transition:all 1s linear;
+    -webkit-transition:all 1s linear;
+    -o-transition:all 1s linear;
+    opacity:0
+}
+
+.animation-element.slide-fade {
+    transition:all 1s linear
+}
+
+.animation-element.slide-fade-slow {
+    opacity:0;
+    -moz-transition:all 2s linear;
+    -webkit-transition:all 2s linear;
+    -o-transition:all 2s linear;
+    transition:all 2s linear
+}
+
+.animation-element.slide-fade-xslow {
+    opacity:0;
+    -moz-transition:all 3s linear;
+    -webkit-transition:all 3s linear;
+    -o-transition:all 3s linear;
+    transition:all 3s linear
+}
+
+.animation-element.slide-flip-x {
+    opacity:0;
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear;
+    transition:all .5s linear;
+    -moz-transform:rotateY(360deg);
+    -webkit-transform:rotateY(360deg);
+    -o-transform:rotateY(360deg);
+    -ms-transform:rotateY(360deg);
+    transform:rotateY(360deg)
+}
+
+.animation-element.slide-flip-y {
+    opacity:0;
+    -moz-transition:all .5s linear;
+    -webkit-transition:all .5s linear;
+    -o-transition:all .5s linear;
+    transition:all .5s linear;
+    -moz-transform:rotateX(360deg);
+    -webkit-transform:rotateX(360deg);
+    -o-transform:rotateX(360deg);
+    -ms-transform:rotateX(360deg);
+    transform:rotateX(360deg)
+}
+
+.animation-element.slide-left-flip-x-y {
+    transition:all 1s linear;
+    -moz-transform:translate3d(-200px,0,0) rotateX(360deg) rotateY(360deg);
+    -webkit-transform:translate3d(-200px,0,0) rotateX(360deg) rotateY(360deg);
+    -o-transform:translate(-200px,0) rotateX(360deg) rotateY(360deg);
+    -ms-transform:translate(-200px,0) rotateX(360deg) rotateY(360deg);
+    transform:translate3d(-200px,0,0) rotateX(360deg) rotateY(360deg)
+}
+
+.animation-element.slide-right-flip-x-y {
+    opacity:0;
+    -moz-transition:all 1s linear;
+    -webkit-transition:all 1s linear;
+    -o-transition:all 1s linear;
+    transition:all 1s linear;
+    -moz-transform:translate3d(200px,0,0) rotateX(360deg) rotateY(360deg);
+    -webkit-transform:translate3d(200px,0,0) rotateX(360deg) rotateY(360deg);
+    -o-transform:translate(200px,0) rotateX(360deg) rotateY(360deg);
+    -ms-transform:translate(200px,0) rotateX(360deg) rotateY(360deg);
+    transform:translate3d(200px,0,0) rotateX(360deg) rotateY(360deg)
+}
+
+.animation-element.in-view {
+    opacity:1;
+    -moz-transform:translate3d(0,0,0);
+    -webkit-transform:translate3d(0,0,0);
+    -o-transform:translate(0,0);
+    -ms-transform:translate(0,0);
+    transform:translate3d(0,0,0)
+}
+
+.animation-element.slide-rotate-clockwise.in-view,.animation-element.slide-rotate-counterclockwise-180.in-view {
+    opacity:1;
+    -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg)
+}
+
+.animation-element.slide-rotate-clockwise-180.in-view,.animation-element.slide-rotate-counterclockwise.in-view {
+    opacity:1;
+    -moz-transform:rotate(0);
+    -webkit-transform:rotate(0);
+    -o-transform:rotate(0);
+    -ms-transform:rotate(0);
+    transform:rotate(0)
+}
+
+.animation-element.slide-left-rotate-clockwise.in-view {
+    opacity:1;
+    -moz-transform:translate3d(0,0,0) rotate(360deg);
+    -webkit-transform:translate3d(0,0,0) rotate(360deg);
+    -o-transform:translate(0,0) rotate(360deg);
+    -ms-transform:translate(0,0) rotate(360deg);
+    transform:translate3d(0,0,0) rotate(360deg)
+}
+
+.animation-element.slide-right-rotate-counterclockwise.in-view {
+    opacity:1;
+    -moz-transform:translate3d(0,0,0) rotate(0);
+    -webkit-transform:translate3d(0,0,0) rotate(0);
+    -o-transform:translate(0,0) rotate(0);
+    -ms-transform:translate(0,0) rotate(0);
+    transform:translate3d(0,0,0) rotate(0)
+}
+
+.animation-element.slide-flip-x.in-view {
+    opacity:1;
+    -moz-transform:rotateY(0);
+    -webkit-transform:rotateY(0);
+    -o-transform:rotateY(0);
+    -ms-transform:rotateY(0);
+    transform:rotateY(0)
+}
+
+.animation-element.slide-flip-y.in-view {
+    opacity:1;
+    -moz-transform:rotateX(0);
+    -webkit-transform:rotateX(0);
+    -o-transform:rotateX(0);
+    -ms-transform:rotateX(0);
+    transform:rotateX(0)
+}
+
+.animation-element.slide-left-flip-x-y.in-view,.animation-element.slide-right-flip-x-y.in-view {
+    opacity:1;
+    -moz-transform:translate3d(0,0,0) rotateX(0) rotateY(0);
+    -webkit-transform:translate3d(0,0,0) rotateX(0) rotateY(0);
+    -o-transform:translate(0,0) rotateX(0) rotateY(0);
+    -ms-transform:translate(0,0) rotateX(0) rotateY(0);
+    transform:translate3d(0,0,0) rotateX(0) rotateY(0)
+}
+
+.dev.product-list .product-item {
+    opacity:1;
+    -moz-transform:none!important;
+    -webkit-transform:none!important;
+    -o-transform:none!important;
+    -ms-transform:none!important;
+    transform:none!important
+}
+
+#screen13:hover,#screen15:hover {
+    border-color:#00f!important
+}
+
+.footer-dark {
+    padding:50px 0;
+    color:#f0f9ff;
+    background-color:#282d32
+}
+
+.footer-dark h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:700;
+    font-size:16px
+}
+
+.footer-dark ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:0
+}
+
+.footer-dark ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:.6
+}
+
+.footer-dark ul a:hover {
+    opacity:.8
+}
+
+.footer-dark .item.text {
+    margin-bottom:36px
+}
+
+@media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px
+}
+
+.footer-dark .item.text {
+    margin-bottom:0
+}
+
+
+}
+
+.footer-dark .item.text p {
+    opacity:.6;
+    margin-bottom:0
+}
+
+.footer-dark .item.social {
+    text-align:center
+}
+
+@media (max-width:991px) {
+    .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px
+}
+
+
+}
+
+.footer-dark .item.social>a {
+    font-size:20px;
+    width:36px;
+    height:36px;
+    line-height:36px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    box-shadow:0 0 0 1px rgba(255,255,255,.4);
+    margin:0 8px;
+    color:#fff;
+    opacity:.75
+}
+
+.footer-dark .item.social>a:hover {
+    opacity:.9
+}
+
+.footer-dark .copyright {
+    text-align:center;
+    padding-top:24px;
+    opacity:.3;
+    font-size:13px;
+    margin-bottom:0
+}
+
+.b-0 {
+    bottom:0
+}
+
+.bg-shadow {
+    background:rgba(76,76,76,0);
+    background:-webkit-gradient(left top,left bottom,color-stop(0,rgba(179,171,171,0)),color-stop(49%,rgba(48,48,48,.37)),color-stop(100%,rgba(19,19,19,.8)));
+    background:linear-gradient(to bottom,rgba(179,171,171,0) 0,rgba(48,48,48,.71) 49%,rgba(19,19,19,.8) 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 )
+}
+
+.top-indicator {
+    right:0;
+    top:1rem;
+    bottom:inherit;
+    left:inherit;
+    margin-right:1rem
+}
+
+.overflow {
+    position:relative;
+    overflow:hidden
+}
+
+.zoom img {
+    transition:all .2s linear
+}
+
+.zoom:hover img {
+    -webkit-transform:scale(1.1);
+    transform:scale(1.1)
+}
+
+.product-item {
+    padding:10px
+}
+
+.product-item .product-container {
+    text-align:left;
+    font:400 14px sans-serif;
+    background-color:#fff;
+    border:1px solid #dbe3e7;
+    border-radius:3px;
+    box-shadow:1px 3px 1px rgba(0,0,0,.08);
+    padding:25px
+}
+
+.product-item a.product-image {
+    display:block;
+    text-align:center;
+    box-shadow:0 0 20px 8px #f3f3f3 inset;
+    width:100%;
+    margin-bottom:25px;
+    padding:20px 0;
+    box-sizing:border-box
+}
+
+.product-item a.product-image img {
+    height:130px
+}
+
+.product-item h2 {
+    font-size:18px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:200px;
+    font-weight:800
+}
+
+.product-item h2 a {
+    text-decoration:none;
+    color:#2b2b2b
+}
+
+.product-item a.small-text {
+    color:grey;
+    text-decoration:none;
+    margin-top:20px;
+    margin-bottom:10px;
+    display:block;
+    text-align:right;
+    font-size:12px
+}
+
+.product-item .product-rating {
+    color:#f09911;
+    font-size:14px
+}
+
+.product-item .product-rating a.small-text {
+    text-align:left;
+    margin:0 0 0 10px;
+    display:inline-block
+}
+
+.product-item p.product-description {
+    margin-top:20px;
+    color:#5d5d5d;
+    line-height:1.45;
+    white-space:normal;
+    margin-bottom:20px
+}
+
+.product-item button {
+    border-radius:2px;
+    background:#87bae1;
+    box-shadow:0 1px 1px rgba(0,0,0,.12);
+    border:0;
+    color:#fff;
+    font-weight:700;
+    font-size:13px;
+    padding:8px 20px
+}
+
+.product-item button:active {
+    background:#87bae1;
+    color:#fff;
+    border:0
+}
+
+.product-item button:focus {
+    background:#87bae1;
+    outline:0;
+    color:#fff
+}
+
+.product-item button:hover {
+    background:#66ABE0;
+    color:#fff
+}
+
+.product-item button:focus:active {
+    background:#87bae1;
+    outline:0;
+    color:#fff
+}
+
+.product-item .product-price {
+    color:#4e4e4e;
+    font-weight:700;
+    font-size:20px;
+    padding-top:5px;
+    text-align:right
+}
+
+.user-item {
+    padding:10px;
+    position:relative
+}
+
+.user-item div.user-container {
+    text-align:left;
+    font:400 14px sans-serif;
+    background-color:#f4f8fa;
+    border:1px solid #dbe3e7;
+    box-shadow:0 2px 3px #dbe3e7;
+    padding-right:50px;
+    overflow:hidden
+}
+
+.user-item a.user-avatar {
+    float:left;
+    padding:10px 15px
+}
+
+.user-item p.user-name {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin:19px 0 0
+}
+
+.user-item p.user-name a {
+    color:#5d6569;
+    text-decoration:none;
+    font-weight:700
+}
+
+.user-item p.user-name span {
+    display:block;
+    font-size:11px;
+    color:#808d93;
+    padding-top:4px
+}
+
+.user-item a.user-delete {
+    background-color:#de4a4a;
+    border-radius:50%;
+    color:#fff;
+    font-size:10px;
+    line-height:23px;
+    width:22px;
+    height:22px;
+    position:absolute;
+    top:0;
+    right:0;
+    text-align:center;
+    text-decoration:none
+}
+
+div {
+    position:sticky!important
+}
+
+.navbar.navbar-dark.navbar-expand-md.fixed-top.bg-dark {
+    background-color:#000!important;
+    opacity:.8
+}
+
+.navbar-dark .navbar-brand,.navbar-dark .navbar-brand:focus,.navbar-dark .navbar-brand:hover,.navbar-dark .navbar-nav .nav-link {
+    color:#fff;
+    font-size:13px
+}
+

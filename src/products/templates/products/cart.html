@@ -1,0 +1,412 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Animated-Pretty-Product-List-v12.css">
+    <link rel="stylesheet" href={% static 'products/assets/css/Footer-Dark.css'%}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav flex-grow-1 justify-content-between">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html" style="padding: 0px;"><img src={%static 'products/assets/img/Dell_Logo.png'%} width="35px"></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Laptop</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Desktop</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Server</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">IT Services</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="border rounded-0 border-dark" style="height: 73.375px;">
+        <div class="container">
+            <div class="row" style="height: 50px;">
+                <div class="col-md-4">
+                    <h1 style="font-size: 30px;margin-top: 18px;font-weight: 800;">MacBook Pro</h1>
+                </div>
+                <div class="col-md-4">
+                    <h1 class="text-right" style="font-size: 20px;margin-top: 28px;">Overview</h1>
+                </div>
+                <div class="col-md-4">
+                    <h1 class="text-right" style="font-size: 20px;margin-top: 28px;">Tech Specs</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 100px;background-color: #eeeeee;position: sticky !important;">
+        <div class="container" style="height: 100px;">
+            <div class="row justify-content-center" style="height: 100px;">
+                {% for post in posts%}
+                {% if post.upid == upid %}
+                
+                <!-- <div class="col-xl-2 text-center"><img src={%static '{{post.imagePath}}'%}></div> -->
+                <div class="col-xl-3" style="font-size: 16px;font-weight: bold;">
+                    <p style="font-size: 16px;font-weight: bold;margin-top: 20px;">{{post.model}}<br></p>
+                    <p style="font-size: 15px;font-weight: normal;">{{post.price}}<br></p>
+                </div>
+                <div class="col-xl-2"><a href="../payment-user"><button class="btn btn-primary" type="button" style="margin-top: 33px;">Checkout</button></a></div>
+                {% endif %}
+                {%endfor%}
+
+            </div>
+        </div>
+    </div>
+    <section style="margin: 0px;margin-top: 0px;margin-right: 100px;margin-left: 100px;margin-bottom: 0px;height: 100%;">
+        
+        {% if post.tweets_before == 1 %}
+        <div class="row" style="height: 220px;">
+            <div class="col" style="margin-top: 30px;">
+                <p class="text-center" style="font-size: 35px;font-weight: bold;line-height: 70px;">You are almost there.<br>Just one more step to join the Dell family.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center user-list">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 user-item">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Linus Gabriel Sebastian
+                                <img class="card-img" style="border-radius: 50%;width: 50px !important;float:right;" src={%static 'products/assets/img/ltt.jpg'%}>
+                        </h4>
+                        <p class="card-text">This is one of the best laptops I've used for its price. Performance, Power and Pure Ecstacy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 user-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Marques Brownlee
+                                    <img class="card-img" style="border-radius: 50%;width: 50px !important;float:right;" src={%static 'products/assets/img/mkbhd.jpeg'%}>
+                            </h4>
+                            <p class="card-text">I look at the prices before I buy my tech. I looked at the price, then looked at the specs, and then went wow.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 user-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Dave Lee
+                                    <img class="card-img" style="border-radius: 50%;width: 50px !important;float:right;" src={%static 'products/assets/img/davelee.jpg'%}>
+                                </h4>
+                                <p class="card-text">Hands down: Beautiful 🙏🙏🙏</p>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="col">
+                <p class="text-center" style="font-size: 35px;font-weight: bold;line-height: 70px;margin-top: 74px;">All the essentials. And then some.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="height: 620px;border-bottom: solid;border-width: thin;">
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="height: 300px;width: auto;" src={%static 'products/assets/img/tech/mouse.jpg'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>Mouse</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p><br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="height: 300px;width: 200px;" src={%static 'products/assets/img/tech/keyboard.png'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>Keyboard</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p><br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="background-image: url(&quot;assets/img/cable_small.png&quot;);height: 300px;width: 200px;background-position: center;background-size: cover;" src={%static 'products/assets/img/cable_small.png'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>USB-C to USB Adapter</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p><br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="height: 620px;border-bottom: solid;border-width: thin;">
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="background-image: url(&quot;assets/img/cable_small.png&quot;);height: 300px;width: 200px;background-position: center;background-size: cover;" src={%static 'products/assets/img/cable_small.png'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>USB-C to USB Adapter</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>The USB-C to USB Adapter lets you connect standard USB accessories — <br>flash drives and cameras, for example — and iOS devices to any <br>Thunderbolt 3 (USB-C) port on your Mac.<br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="background-image: url(&quot;assets/img/cable_small.png&quot;);height: 300px;width: 200px;background-position: center;background-size: cover;" src={%static 'products/assets/img/cable_small.png'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>USB-C to USB Adapter</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>The USB-C to USB Adapter lets you connect standard USB accessories — <br>flash drives and cameras, for example — and iOS devices to any <br>Thunderbolt 3 (USB-C) port on your Mac.<br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="background-image: url(&quot;assets/img/cable_small.png&quot;);height: 300px;width: 200px;background-position: center;background-size: cover;" src={%static 'products/assets/img/cable_small.png'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>USB-C to USB Adapter</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>The USB-C to USB Adapter lets you connect standard USB accessories — <br>flash drives and cameras, for example — and iOS devices to any <br>Thunderbolt 3 (USB-C) port on your Mac.<br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="height: 620px;border-bottom: solid;border-width: thin;">
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="background-image: url(&quot;assets/img/cable_small.png&quot;);height: 300px;width: 200px;background-position: center;background-size: cover;" src={%static 'products/assets/img/cable_small.png'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>USB-C to USB Adapter</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>The USB-C to USB Adapter lets you connect standard USB accessories — <br>flash drives and cameras, for example — and iOS devices to any <br>Thunderbolt 3 (USB-C) port on your Mac.<br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="background-image: url(&quot;assets/img/cable_small.png&quot;);height: 300px;width: 200px;background-position: center;background-size: cover;" src={%static 'products/assets/img/cable_small.png'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>USB-C to USB Adapter</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>The USB-C to USB Adapter lets you connect standard USB accessories — <br>flash drives and cameras, for example — and iOS devices to any <br>Thunderbolt 3 (USB-C) port on your Mac.<br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="max-width: 340px;">
+                <div class="row">
+                    <div class="col text-center"><img class="bg-white border-white shadow-none" style="background-image: url(&quot;assets/img/cable_small.png&quot;);height: 300px;width: 200px;background-position: center;background-size: cover;" src={%static 'products/assets/img/cable_small.png'%}></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="height: 28px;">
+                        <p style="font-size: 18px;"><strong>USB-C to USB Adapter</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="height: 45px;">
+                    <div class="col">
+                        <p style="font-size: 18px;">$19.00<br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>The USB-C to USB Adapter lets you connect standard USB accessories — <br>flash drives and cameras, for example — and iOS devices to any <br>Thunderbolt 3 (USB-C) port on your Mac.<br></p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col"><button class="btn btn-primary" type="button">Add to Bag</button></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center" style="margin-top: 14px;">Delivery: In Stock</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Links</h3>
+                        <ul>
+                            <li><a href="products-laptop.html">Laptops</a></li>
+                            <li><a href="#">Desktops</a></li>
+                            <li><a href="#">Server</a></li>
+                            <li><a href="#">IT Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Listen. Learn. Deliver. That’s what we’re about.</h3>
+                        <p>Dell empowers countries, communities, customers and people everywhere to use technology to realize their dreams. Customers trust us to deliver technology solutions that help them do and achieve more, whether they’re at home, work,
+                            school or anywhere in their world. Learn more about our story, purpose and people behind our customer-centric approach.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Dell © 2019</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/Animated-Pretty-Product-List-v12.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <!-- <script src={%static 'products/assets/js/theme.js'%}></script> -->
+</body>
+
+</html>
