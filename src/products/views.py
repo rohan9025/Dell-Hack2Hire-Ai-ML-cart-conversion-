@@ -216,6 +216,17 @@ def alienware15_series(request):
 def alienware17_series(request):
     return render(request,'products/alienware17-series.html')
 
+def payment1(request):
+    return render(request,'products/payment1.html')
+
+def payment2(request):
+    return render(request,'products/payment2.html')
+
+def payment3(request):
+    return render(request,'products/payment3.html')
+
+
+
 def cart(request):
     print(request.build_absolute_uri())
     posts=[

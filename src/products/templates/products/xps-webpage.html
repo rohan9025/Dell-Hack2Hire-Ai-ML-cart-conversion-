@@ -114,8 +114,10 @@
 	</div>
 
 	<div>
+		
+
 		<h3 style="text-align: center; margin-top: 2em;">
-			<form action="">
+			<form action="../xps13-series">
 			{% csrf_token %}
 				<input type="submit">
 			</form>
@@ -251,7 +253,7 @@
 		}
 
 		$(document).ready(function(){
-			$("form").submit(function (event){
+			$("#btn-sub").click(function (event){
 				cleanStats();
 				event.preventDefault();
 				$.ajax({
@@ -259,6 +261,7 @@
 					url: "/xps-webpage/",
 					data: stats,
 				});
+
 			return false;
 			})
 		})

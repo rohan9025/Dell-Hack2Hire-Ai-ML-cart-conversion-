@@ -115,11 +115,9 @@
 
 	<div>
 		<h3 style="text-align: center; margin-top: 2em;">
-		<form action="">
 		{% csrf_token %}
-		<input type="submit">
-		</form>
-		</h3>
+		<a href="../latitude-series" class="btn btn-primary" id="btn-sub" role="button"></a>
+	</h3>
 	</div>
 
 	<div class="footer-dark">
@@ -234,7 +232,7 @@
 		}
 
 		$(document).ready(function(){
-			$("form").submit(function (event){
+			$("#btn-sub").click(function (event){
 				event.preventDefault();
 				$.ajax({
 				type: "POST",

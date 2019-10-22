@@ -16,6 +16,16 @@ urlpatterns = [
     path('latitude-series/',views.latitude_series,name='latitude-series'),
     path('alienware15-series/',views.alienware15_series,name='alienware15-series'),
     path('alienware17-series/',views.alienware17_series,name='alienware17-series'),
+    path('cart',views.cart,name='cart'),
+    path('payment-user',views.payment1,name='payment-user'),
+    path('payment-pay',views.payment2,name='payment-pay'),
+    path('payment-order',views.payment3,name='payment-order'),
+
+
+
+
+    #path('cart/<int:pid>',views.alienware17_series,name='alienware17-series'),
+    
 
 
 

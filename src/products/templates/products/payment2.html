@@ -1,0 +1,194 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href={%static 'products/assets/css/styles-payment2.min.css'%}>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav flex-grow-1 justify-content-between">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html" style="padding: 0px;"><img src={%static 'products/assets/img/Dell_Logo.png'%} width="35px"></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Laptops</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Desktops</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Services</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Solutions</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container steps-container">
+        <div class="row">
+            <div class="col-6 col-sm-4 col-md-2 col-lg-4 process-step">
+                <div id="user-detail" class="primary-color primary-background-color step-base" style="margin-left: 0px;"><strong class="step-title">Step 1</strong>
+                    <p class="step-short-desc">User Details</p>
+                </div>
+                <div class="step-caption">
+                    <div class="secondary-color secondary-background-color caption-content" style="min-height: 80px;">
+                        <p>Enter your personal and delivery details and get them verified to enjoy hassle free doorstep delivery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2 col-lg-4 process-step">
+                <div id="payment-details" class="primary-color primary-background-color step-base"><strong class="step-title">Step 2</strong>
+                    <p class="step-short-desc">Payment Details</p>
+                </div>
+                <div class="step-caption">
+                    <div class="secondary-color secondary-background-color caption-content" style="min-height: 80px;">
+                        <p class="secondary-color secondary-background-color caption-content" style="min-height: 80px;">Place your trust in us and have a safe experience with Norton secured channels</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2 col-lg-4 process-step">
+                <div class="primary-color primary-background-color step-base"><strong class="step-title">Step 3</strong>
+                    <p class="step-short-desc">Place Order</p>
+                </div>
+                <div class="step-caption">
+                    <div class="secondary-color secondary-background-color caption-content" style="min-height: 80px;">
+                        <p>View your final order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="features-boxed">
+        <section id="contact" style="padding:40px;padding-right:5px;padding-left:4px;">
+            <div class="container">
+                <form id="contactForm" style="padding:15px;" action="javascript:void();" method="post">
+                    <div class="form-row" style="margin-left:0px;margin-right:0px;padding:10px;">
+                        <div class="col">
+                            <div class="form-row .payment-dialog-row">
+                                <div class="col-12 col-md-4 offset-md-4">
+                                    <div class="card credit-card-box">
+                                        <div class="card-header">
+                                            <h3><span class="panel-title-text">Payment Details </span><img class="img-fluid panel-title-image" src={%static 'products/assets/img/accepted_cards.png'%}><img id="norton-img" src={%static 'products/assets/img/sof-nor-is2u1y.png'%} style : width="70px"></h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="payment-form">
+                                                <div class="form-row">
+                                                    <div class="col-12">
+                                                        <div class="form-group"><label for="cardNumber">Card number </label>
+                                                            <div class="input-group"><input class="form-control" type="tel" id="cardNumber" required="" placeholder="Valid Card Number">
+                                                                <div class="input-group-append"><span class="input-group-text"><i class="fa fa-credit-card"></i></span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-7">
+                                                        <div class="form-group"><label for="cardExpiry"><span>expiration </span><span>EXP </span> date</label><input class="form-control" type="tel" id="cardExpiry" required="" placeholder="MM / YY"></div>
+                                                    </div>
+                                                    <div class="col-5 pull-right">
+                                                        <div class="form-group"><label for="cardCVC">cv code</label><input class="form-control" type="tel" id="cardCVC" required="" placeholder="CVC"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-12">
+                                                        <div class="form-group"><label for="couponCode">Coupon Code</label><input class="form-control" type="text" id="couponCode"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-12"><a href="../payment-order"><button class="btn btn-success btn-block btn-lg" type="button">Select Mode</button></a></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <hr>
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Welcome to The Dell Circle</h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+            </div>
+            <div class="row justify-content-center features">
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-map-marker icon"></i>
+                        <h3 class="name">Works everywhere</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#">Learn more »</a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-clock-o icon"></i>
+                        <h3 class="name">Always available</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#">Learn more »</a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-list-alt icon"></i>
+                        <h3 class="name">Customizable </h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#">Learn more »</a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-leaf icon"></i>
+                        <h3 class="name">Organic </h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#">Learn more »</a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-plane icon"></i>
+                        <h3 class="name">Fast </h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#">Learn more »</a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-phone icon"></i>
+                        <h3 class="name">Mobile-first</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#">Learn more »</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2017</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src={%static 'products/assets/js/script-payment2.min.js'%}></script>
+</body>
+
+</html>
