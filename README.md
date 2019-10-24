@@ -40,8 +40,8 @@ Flow Diagram
 An overview of 
 * Javascript, Django, Jquery, Python, ScikitLearn, Pandas.
 * Steps:
-    * `pip install -r requirements.txt`
     * `cd Application Code`
+    * `pip install -r requirements.txt`
     * `python3 manage.py runserver`
 
 ### Team Members
